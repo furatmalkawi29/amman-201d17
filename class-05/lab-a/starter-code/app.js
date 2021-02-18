@@ -89,18 +89,17 @@ Test this function by hand in the console to get it working, and when you think 
 let testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  let sum = 0;
-
-  for ( let i =0 ; i<3 ; i++)
-  {
-    sum = sum + sumArr[i];
-  }
-
   let a = sumArr [0];
   let b = sumArr [1];
   let c = sumArr [2];
-  
-  return [sum,`${a},${b},${c} was passed in as an array of numbers, and ${sum} is their sum.`];
+
+  let sumFirstTowArray = sum (a,b);   // (a+b) // sumFirstTowArray = [5,'string']
+  let sumFirstTow = sumFirstTowArray [0]; // sumFirstTow == 5
+
+  let sumThirdArray = sum (sumFirstTow,c); // (a+b) + c // sumThirdArray = [9, 'string'] 
+  let sumThird = sumThirdArray[0]; // sumThird == 9
+
+  return [sumThird,`${a},${b},${c} was passed in as an array of numbers, and ${sumThird} is their sum.`];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
@@ -122,10 +121,23 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+  let a = multArr [0];
+  let b = multArr [1];
+  let c = multArr [2];
+
+  let multiplyFirstTowArray = multiply (a,b); // (a*b) // multiplyFirstTowArray = [28,'string']
+  let multiplyFirstTow = multiplyFirstTowArray[0]; 
+
+  let multiplyThirdArray = multiply (multiplyFirstTow,c); // (a*b) * c // multiplyThirdArray = [140, 'string'] 
+  let multiplyThird = multiplyThirdArray [0];
+
+  return [multiplyThird,`The numbers ${a},${b},${c} have a product of ${multiplyThird}.`];
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
